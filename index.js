@@ -41,11 +41,10 @@ process = () => {
 draw.addEventListener('click', process)
 // console.log(process)
 
+Eraser.addEventListener('click', (e) => {
+    Table.innerHTML = ""; 
+})
 
 
 
-
-    for (let p = 0; p < Color; p++) {
-        const element = CellArray[p];
-        
-    }
+  
