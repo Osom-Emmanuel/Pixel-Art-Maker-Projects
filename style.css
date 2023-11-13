@@ -1,0 +1,48 @@
+.background-div{
+    background-color: rgb(16, 194, 155);
+    border: 1px solid gold;
+    height: 50em;
+    width: 100%;
+}
+body{
+    background-color: rgb(16, 194, 155);
+}
+.header{
+    background-color: white;
+    color: red;
+    border: 1px solid white;
+    height: 1em;
+    margin-top: 2em;
+    font-size: xx-large;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    padding: 1em 0 1em 0;
+}
+.rows-label, .column-label, .color{
+    color: white;
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+.inputrow, .inputcol, .color, .Draw{
+    height: 2em;
+    width: 50%;
+    font-size: x-large;
+}
+.grid-container{
+    background-color: brown;
+    height: fit-content;
+    width: 100%;
+    border: 1px;
+    margin: 2em 0 0 0;
+}
+.color,#eraser{
+    margin-top: 1em;
+    width: 30%;
+    height: 2em;
+}
+tr, td{
+    border: 1px  solid black;
+    padding: 0.5em;
+    background-color: white;
+    }
