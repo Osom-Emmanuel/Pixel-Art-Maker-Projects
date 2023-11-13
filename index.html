@@ -3,33 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My_Pixel_Art_Maker.com</title>
+    <title>Osom's Pixel Art Maker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="background-div">
-        <div class="header"><span style="color: green;">MY</span> PIXEL <span style="color: gold">ART</span>MAKER</div><br>
-             <form>
-                 <label class="rows-label" for=" No of rows"> NO OF ROWS:</label>
-                  <input name="rows" class="inputrow" id="inputrow" value="" placeholder="0" type="number"><br><br>
+    <div class="header"><span style="color: green;">MY</span> PIXEL <span style="color: gold">ART</span>MAKER</div><br>
+    <form>
+        <label for="inputRow">Number of Rows</label>
+        <input type="number" id="inputRow" name="inputRow" min="1"><br><br>
+
+        <label for="inputColumn">Number of Columns</label>
+        <input type="number" id="inputColumn" name="inputColumn" min="1"><br><br>
         
-                 <label class="column-label" for=" No of columns"> NO OF COLUMNS:</label>
-                 <input name="columns" class="inputcol" id="inputcol" value="" placeholder="0" type="number">
-                 
-                 <label for="color" class="color">Colour</label>
-                 <input type="color" class="color" value="">
+        <label for="color">Select Colour</label>
+        <input type="color" id="color"><br><br>
 
-                 <label for="Eraser"  class="color">Eraser</label>
-                  <input type="button" id="eraser" value=""><br><br>
+        <button id="draw">Draw</button>
 
-                  <input type="button" value="Draw" class="Draw">
-             </form>
-        <div class="grid-container">
-            <table class="table"> 
-            </table> 
-        </div>
-    </section>
-     <script src="index.js"></script> 
-    <!-- <script src="pixel.js"></script> -->
+        <button id="clear">Clear</button><br><br>
+
+    </form>
+
+    <div style="background-color: brown; width: fit-content; height: fit-content; text-align: center;" id="container">
+
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>

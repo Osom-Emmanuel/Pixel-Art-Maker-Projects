@@ -1,50 +1,50 @@
-let inputRow = document.getElementById("inputrow");
-let inputsColumn = document.getElementById("inputcol");
-let Table = document.querySelector('.table');
-let Eraser = document.getElementById('eraser');
-let Color = document.querySelector('color');
-let display = document.querySelector('.grid-container');
-let draw = document.querySelector('.Draw');
+let inputRow = document.getElementById('inputRow');
+let inputColumn = document.getElementById('inputColumn');
+let colorBtn = document.getElementById('color');
+let drawBtn = document.getElementById('draw');
+let clearBtn = document.getElementById('clear');
+let display = document.getElementById('container');
+let Paint = document.getElementById('paint');
+
+let colorPicked = colorBtn.value;
+
+let process = () => {
+    let rows = Number(inputRow.value);
+    let columns = Number(inputColumn.value);
+    let table = document.createElement('table');
+    // console.log(typeof(columns));
+    // table.style.textAlign = center;
 
 
-
-
-
-
-// let Tables = document.createElement("table");
-process = () => {
-    let  Row = parseInt(inputRow.value);
-    let Column = parseInt(inputsColumn.value);
-
-    console.log(Row)
-    console.log(Column)
-    
-    for (let i = 0; i < Row; i++){
-        let tableRow = document.createElement("tr");
+    for(i = 0; i < rows; i++){
+        let tableRows = document.createElement('tr');
+        // console.log(tableRows);
         
-        for (let j = 0; j < Column; j++){
-            let tableData = document.createElement("td");
-
-
-            tableRow.appendChild(tableData);
-            Table.appendChild(tableRow);
+        for (let c = 0; c < columns; c++) {
+            let tableColumns = document.createElement('td');
+            // console.log(tableColumns);
+            tableRows.appendChild(tableColumns);
+            table.appendChild(tableRows);
+            
+            tableColumns.addEventListener('click', (e) => {
+                tableColumns.style.backgroundColor = colorPicked;
+                colorPicked = colorBtn.value;
+                console.log(colorPicked)
+            })
         }
-
-        display.innerHTML = "";
+        display.innerHTML = ""
         
-        display.appendChild(Table)
+        display.appendChild(table);
+    
     }
-    CellArray = document.querySelectorAll("td")
-    console.log(CellArray);
-
 }
-draw.addEventListener('click', process)
-// console.log(process)
 
-Eraser.addEventListener('click', (e) => {
-    Table.innerHTML = ""; 
+drawBtn.addEventListener('click', (e) => {
+    process();
+    e.preventDefault();
 })
 
+clearBtn.addEventListener('click', (e) => {
+    display.innerHTML = "";
+})
 
-
-  
