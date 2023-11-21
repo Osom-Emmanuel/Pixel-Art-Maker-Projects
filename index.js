@@ -5,16 +5,21 @@ let drawBtn = document.getElementById('draw');
 let clearBtn = document.getElementById('clear');
 let display = document.getElementById('container');
 let Paint = document.getElementById('paint');
+let Eraserbtn = document.getElementById('erase');
 
-let colorPicked = colorBtn.value;
+let count = 0;
+let check = false;
+// count++
+// console.log(count++)
+
+
 
 let process = () => {
     let rows = Number(inputRow.value);
     let columns = Number(inputColumn.value);
     let table = document.createElement('table');
     // console.log(typeof(columns));
-    // table.style.textAlign = center;
-
+ 
 
     for(i = 0; i < rows; i++){
         let tableRows = document.createElement('tr');
@@ -25,17 +30,34 @@ let process = () => {
             // console.log(tableColumns);
             tableRows.appendChild(tableColumns);
             table.appendChild(tableRows);
-            
+
+            // Adding colorings
             tableColumns.addEventListener('click', (e) => {
-                tableColumns.style.backgroundColor = colorPicked;
-                colorPicked = colorBtn.value;
-                console.log(colorPicked)
+                if(check){
+                    tableColumns.style.backgroundColor = 'transparent'
+                }else{
+                    tableColumns.style.backgroundColor = colorBtn.value
+                }
             })
-        }
+            tableColumns.addEventListener('dblclick', (e) => {
+                tableColumns.style.backgroundColor = 'transparent';
+            })
+
+            Eraserbtn.addEventListener('click', (e) => {
+                check = true                   
+                e.preventDefault();
+            })
+            Paint.addEventListener('click', (e) => {
+                check = false                   
+                e.preventDefault();
+            })
+        }   
+
         display.innerHTML = ""
         
-        display.appendChild(table);
-    
+  
+        display.appendChild(table);  
+        
     }
 }
 
@@ -47,4 +69,7 @@ drawBtn.addEventListener('click', (e) => {
 clearBtn.addEventListener('click', (e) => {
     display.innerHTML = "";
 })
+
+
+
 
