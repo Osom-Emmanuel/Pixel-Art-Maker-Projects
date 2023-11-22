@@ -31,9 +31,18 @@ label{
     font-weight: bolder;
 }
 #inputRow,#inputColumn{
-    height: 2em;
+    height: 1.5em;
     width: 50%;
     font-size: x-large;
+    color: purple;
+}
+#inputRow:hover{
+    background-color: gold;
+    border: 3px solid green;
+}
+#inputColumn:hover{
+        background-color: gold;
+        border: 3px solid green;
 }
 #color{
     height: 2em;
@@ -43,8 +52,8 @@ label{
     border: none;
 }
 #clear,#draw,#erase,#paint{
-    height: 2em;
-    width: 15%;
+    height: 1.5em;
+    width: 20%;
     font-size: large;
     color: white;
     background-color: blueviolet;
@@ -73,4 +82,30 @@ label{
 }
 table{
     text-align: center;
+    border-collapse: collapse;
 }
+@media screen and (min-width: 768px){
+    label{
+        color: white;
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+    #inputRow,#inputColumn{
+        height: 1.5em;
+        width: 25%;
+        font-size: xx-large;
+    }
+ }
+
+ @media screen and (min-width: 1246px) { 
+    label{
+        color: white;
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+    #inputRow,#inputColumn{
+        height: 1.5em;
+        width: 25%;
+        font-size: xx-large;
+    }
+ }
